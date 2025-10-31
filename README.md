@@ -28,19 +28,9 @@ The implementation is split into:
 <script type="module" src="./js/datalayer.js"></script>
 ```
 
-- ES modules must be served over HTTP(S). If you open `index.html` via `file://`, the imports may fail due to browser security (CORS/origin) rules. Use any static server, for example:
-
-```bash
-cd /path/to/datalayer-example-fluke
-python3 -m http.server 5173
-# then open http://localhost:5173/
-```
+- ES modules must be served over HTTP(S). If you open `index.html` via `file://`, the imports may fail due to browser security (CORS/origin) rules.
 
 If you cannot use modules, convert the files to classic scripts (see “Non-module fallback” below).
-
-## Development note (consent bypass)
-
-For local development (`localhost`, `127.0.0.1`, `*.local`), the page sets `window.__DEV_DISABLE_CONSENT = true` and short-circuits OneTrust/Eloqua consent prompts so you can test event flows without banners. Production behavior is unchanged.
 
 ## Config structure (schema)
 
